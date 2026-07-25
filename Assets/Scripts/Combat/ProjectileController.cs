@@ -58,6 +58,13 @@ public class ProjectileController : MonoBehaviour
             damage.TakeDamage(power);
         }
 
+        IDamageable<int> terrordon = other.GetComponent<IDamageable<int>>();
+
+        if (terrordon != null)
+        {
+            terrordon.TakeDamage(0);
+        }
+
         Despawn();
     }
 }

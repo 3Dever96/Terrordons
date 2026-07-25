@@ -68,7 +68,7 @@ public class PlayerController : MovementController
             }
             else
             {
-                CurrentSpeed -= Mathf.Min(fric * Time.deltaTime, CurrentSpeed);
+                CurrentSpeed = 0f;
             }
             
             FaceDirection(lookDirection, turnSpeed);
