@@ -12,8 +12,11 @@ public class PlayerAttack : MonoBehaviour
         {
             ProjectileController newProjectile = ProjectilePool.instance.GetProjectile();
 
-            newProjectile.Spawn(projectilePoint.position, projectilePoint.forward);
-            canFire = false;
+            if (newProjectile != null)
+            {
+                newProjectile.Spawn(projectilePoint.position, projectilePoint.forward);
+                canFire = false;
+            }
         }
 
         if (!InputHub.instance.Fire && !canFire)
