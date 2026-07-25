@@ -30,6 +30,8 @@ public class MovementController : MonoBehaviour
     protected virtual void Start()
     {
         Controller = GetComponent<CharacterController>();
+
+        lookDirection = transform.forward;
     }
 
     protected void FaceDirection(Vector3 direction, float newTurnSpeed = 500f)
