@@ -37,6 +37,11 @@ public class ProjectilePool : MonoBehaviour
 
     public ProjectileController GetProjectile()
     {
-        return projectiles.Dequeue();
+        if (projectiles.Count > 0)
+        {
+            return projectiles.Dequeue();
+        }
+
+        return null;
     }
 }

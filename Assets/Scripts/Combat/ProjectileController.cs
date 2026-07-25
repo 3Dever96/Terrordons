@@ -10,6 +10,8 @@ public class ProjectileController : MonoBehaviour
 
     private TrailRenderer trail;
 
+    [SerializeField] private float power;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
@@ -49,6 +51,13 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        IDamageable<float> damage = other.GetComponent<IDamageable<float>>();
+
+        if (damage != null)
+        {
+            damage.TakeDamage(power);
+        }
+
         Despawn();
     }
 }

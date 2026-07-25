@@ -339,3 +339,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileController
   speed: 50
   lifeTime: 2
+  power: 1
